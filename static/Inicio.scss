@@ -1,0 +1,260 @@
+$blanco: #FFFFFF;
+$fontFamily: 'Roboto', sans-serif;
+$grisletras: #8f9596;
+$azul: rgba(26, 45, 75, 1);
+$backDark2: #1f1f1f;
+$rojo: rgba(226, 0, 26, 1);
+$verde: rgb(21, 155, 28);
+$backLight1: #EEF2F7;
+$backLight2: #CFD8DC;
+
+@mixin inputs {
+    width: 100%;
+    height: 2.8rem;
+    font-size: 1.1rem;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+    font-family: $fontFamily;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+@mixin grid-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 15px;
+    justify-items: center;
+
+    div {
+        width: 100%;
+    }
+}
+
+:root {
+    color-scheme: light dark;
+    /* both supported */
+    font-family: $fontFamily;
+
+    h1,
+    h4 {
+        font-weight: normal;
+        font-family: $fontFamily;
+        padding: 5px 0px;
+    }
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.background {
+    min-height: 20vh;
+    width: auto;
+    min-height: calc(100vh - 4rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.295);
+    padding: 2rem 5rem 5rem 5rem;
+    border-radius: 1rem;
+}
+
+.encabezado {
+    max-height: 308px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 400px;
+}
+
+select,
+input[type="text"],
+input[type="number"],
+input[type="email"],
+textarea {
+    @include inputs;
+    text-align: left;
+    border-bottom: 2px solid $grisletras;
+    cursor: text;
+}
+
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+    border-bottom: 2px solid $azul;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-bottom: 2px solid $verde;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.grid {
+    @include grid-details;
+}
+
+.description-area {
+    @include grid-details;
+    grid-template-columns: 1fr;
+    justify-items: start;
+}
+
+.upload {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    input {
+        padding: 0;
+        display: none;
+    }
+
+    input#file-upload-button {
+        background-color: #1f1f1f;
+    }
+}
+
+.buttonphoto {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #3B3B3B;
+    border-bottom: 2px solid $grisletras;
+}
+
+.buttonphoto:hover {
+    border-bottom: 2px solid $azul;
+}
+
+.buttonphoto:active {
+    border-bottom: 2px solid $verde;
+}
+
+.description-area textarea {
+    resize: vertical;
+    min-height: 5rem;
+    max-height: 15rem;
+    padding: 0;
+    cursor: text;
+}
+
+.button {
+    @include inputs;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .plantilla {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+
+    }
+
+    .arriba {
+        font-size: 1.5rem;
+        padding-top: 1rem;
+        position: relative;
+        width: 300px;
+        height: 15rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .arriba {
+        font-size: 1.5rem;
+        padding-top: 2vh;
+        position: relative;
+        width: 300px;
+        height: 15rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .arriba {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 380px) {
+
+    select,
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=date],
+    input[type=number] {
+        width: 14rem;
+        height: 2.8rem;
+        font-size: 1.1rem;
+    }
+}
+
+.main-layout {
+    &>div {
+        width: 100%;
+
+        iframe {
+            width: 100%;
+            min-height: 500px;
+            height: 100%;
+            max-height: 800px;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .formulario {
+        background-color: $backDark2;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .cuerpo {
+        background-color: $backLight1;
+    }
+
+    .formulario {
+        background-color: $backLight2;
+    }
+}
