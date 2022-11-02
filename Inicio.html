@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="static/Inicio.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
-    <script src="https://unpkg.com/@hotwired/stimulus@3.1.1/dist/stimulus.js" defer type="module"></script>
+    
     <script src="https://kit.fontawesome.com/c38b0e0448.js" crossorigin="anonymous" defer></script>
-    <script src="static/js/Inicio.js" defer></script>
+    <!-- <script src="static/js/Inicio.js" defer></script> -->
     <script src="static/js/application.js" defer type="module"></script>
 
     <meta name="color-scheme" content="dark light">
@@ -29,38 +29,38 @@
             <div class="grid">
                 <div>
                     <h4>Nombres</h4>
-                    <input data-hello-target="firstname" id="firstname" type="text" placeholder="John...">
+                    <input data-form-cv-target="firstname" id="firstname" type="text" placeholder="John...">
                 </div>
                 <div>
                     <h4>Apellidos</h4>
-                    <input data-hello-target="lastname" id="lastname" type="text" placeholder="Doe...">
+                    <input data-form-cv-target="lastname" id="lastname" type="text" placeholder="Doe...">
                 </div>
                 <div>
                     <h4>Correo electronico</h4>
-                    <input data-hello-target="email" type="email" placeholder="yo@gmail.com...">
+                    <input data-form-cv-target="email" type="email" placeholder="yo@gmail.com...">
                 </div>
                 <div>
                     <h4>Telefono de contacto</h4>
-                    <input data-hello-target="phone" type="number" placeholder="3000000000...">
+                    <input data-form-cv-target="phone" type="number" placeholder="3000000000...">
                 </div>
                 <div>
                     <h4>Como me considero</h4>
-                    <input data-hello-target="ocupation" id="ocupation" type="text" placeholder="Carpintero...">
+                    <input data-form-cv-target="ocupation" id="ocupation" type="text" placeholder="Carpintero...">
                 </div>
             </div>
             <div class="description-area">
                 <h4>Descripcion</h4>
-                <textarea data-hello-target="description" id="description" placeholder="Descripcion..."> </textarea>
+                <textarea data-form-cv-target="description" id="description" placeholder="Descripcion..."> </textarea>
             </div>
             <div class="upload">
                 <label  for="photo" class="buttonphoto">
                     <i class="fa fa-cloud-upload"></i> Subir Archivo
                 </label>
                 <input data-action="click->form#upload" id="photo" type="file" accept="image/*" />
-                <span data-hello-target="photolabel" id="photolabel">Seleccione un archivo</span>
+                <span data-form-cv-target="photolabel" id="photolabel">Seleccione un archivo</span>
             </div>
             <div class="grid">
-                <input class="button" data-action="click->form#print" type="button" value="Guardar">
+                <input class="button" data-action="click->form-cv#print" type="button" value="Guardar">
                 <input class="button" data-action="click->form#rellenar" onclick="Rellenar()" type="button" value="Rellenar">
             </div>
             </form>

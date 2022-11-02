@@ -1,8 +1,13 @@
-console.log("Hello from form_controller.js");
+import { Controller } from "https://unpkg.com/@hotwired/stimulus/dist/stimulus.js"
+
 export default class extends Controller {
-    static targets = ["firstname", "lastname", "email", "ocupation", "photo", "photolabel"]
-  
-    print() {
-      console.log(this.firstnameTarget.value);
-    }
+  static targets = [ "firstname" ]
+
+  connect() {
+      
   }
+
+  print() {
+      console.log(this.firstnameTarget.value)
+  }
+}
